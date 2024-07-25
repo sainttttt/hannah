@@ -1,2 +1,29 @@
 # Hannah
-xxhash wrapper library for Nim
+Hash library for Nim, currently supports xxhash
+
+```
+nimble install hannah
+```
+
+Usage:
+
+```
+hash = streamingHashXxH3_64(largefilePath, seed)
+echo hash
+```
+
+```
+var state = newXxh32()
+state.update(msg)
+assert state.digest() == msgh32
+assert $state == $msgh32
+
+state.reset()
+state.update("Nobody ")
+state.update("inspects ")
+state.update("the spammish ")
+state.update("repetition")
+assert state.digest() == 3794352943'u32
+assert $state == $3794352943'u32
+state.reset()
+```

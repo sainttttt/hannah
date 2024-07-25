@@ -102,13 +102,12 @@ proc `=destroy`*(state: var XxH3_64State) =
 # is extremely minimal so it's not worth it. Was just doing it for
 # fun really
 
-const chunkSize = 2 ^ 17
 # var buffer = newSeqUninitialized[uint8](chunkSize)
 # var buffer = newString(chunkSize)
 var buffer: string
 var bufferAlloced = false
 
-proc streamingHashXxH3_64*(path: string, seed:uint64 = 0): string =
+proc streamingHashXxH3_64*(path: string, seed:uint64 = 0, chunkSize = 2 ^ 17): string =
   if not bufferAlloced:
     bufferAlloced = true
     buffer = newString(chunkSize)
