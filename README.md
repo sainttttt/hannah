@@ -1,3 +1,5 @@
+![hannah-logo](https://github.com/user-attachments/assets/c23a1737-36f1-4783-8639-6b82f5a4bc26)
+
 # Hannah
 Hash library for Nim, currently supports xxhash
 
